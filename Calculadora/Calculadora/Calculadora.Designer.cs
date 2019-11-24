@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxResultados = new System.Windows.Forms.TextBox();
             this.LabelTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonN7 = new System.Windows.Forms.Button();
@@ -65,7 +63,10 @@
             this.buttonPunto = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.labelSalir = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.buttonCE = new System.Windows.Forms.Button();
+            this.buttonC = new System.Windows.Forms.Button();
+            this.buttonBorrar = new System.Windows.Forms.Button();
+            this.textBoxResultados = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -82,23 +83,6 @@
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBoxResultados);
-            this.panel1.Location = new System.Drawing.Point(12, 34);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(371, 68);
-            this.panel1.TabIndex = 0;
-            // 
-            // textBoxResultados
-            // 
-            this.textBoxResultados.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxResultados.Location = new System.Drawing.Point(3, 3);
-            this.textBoxResultados.Multiline = true;
-            this.textBoxResultados.Name = "textBoxResultados";
-            this.textBoxResultados.Size = new System.Drawing.Size(365, 62);
-            this.textBoxResultados.TabIndex = 0;
             // 
             // LabelTitle
             // 
@@ -149,6 +133,7 @@
             this.buttonN8.TabIndex = 16;
             this.buttonN8.Text = "8";
             this.buttonN8.UseVisualStyleBackColor = false;
+            this.buttonN8.Click += new System.EventHandler(this.buttonN8_Click);
             // 
             // panel4
             // 
@@ -169,6 +154,7 @@
             this.buttonN9.TabIndex = 17;
             this.buttonN9.Text = "9";
             this.buttonN9.UseVisualStyleBackColor = false;
+            this.buttonN9.Click += new System.EventHandler(this.buttonN9_Click);
             // 
             // panel5
             // 
@@ -210,6 +196,7 @@
             this.buttonDiv.TabIndex = 19;
             this.buttonDiv.Text = "/";
             this.buttonDiv.UseVisualStyleBackColor = false;
+            this.buttonDiv.Click += new System.EventHandler(this.buttonDiv_Click);
             // 
             // panel7
             // 
@@ -230,6 +217,7 @@
             this.buttonN6.TabIndex = 17;
             this.buttonN6.Text = "6";
             this.buttonN6.UseVisualStyleBackColor = false;
+            this.buttonN6.Click += new System.EventHandler(this.buttonN6_Click);
             // 
             // panel8
             // 
@@ -250,6 +238,7 @@
             this.buttonN5.TabIndex = 16;
             this.buttonN5.Text = "5";
             this.buttonN5.UseVisualStyleBackColor = false;
+            this.buttonN5.Click += new System.EventHandler(this.buttonN5_Click);
             // 
             // panel9
             // 
@@ -270,6 +259,7 @@
             this.buttonN4.TabIndex = 15;
             this.buttonN4.Text = "4";
             this.buttonN4.UseVisualStyleBackColor = false;
+            this.buttonN4.Click += new System.EventHandler(this.buttonN4_Click);
             // 
             // panel10
             // 
@@ -290,6 +280,7 @@
             this.buttonResta.TabIndex = 21;
             this.buttonResta.Text = "-";
             this.buttonResta.UseVisualStyleBackColor = false;
+            this.buttonResta.Click += new System.EventHandler(this.buttonResta_Click);
             // 
             // panel11
             // 
@@ -310,6 +301,7 @@
             this.buttonN3.TabIndex = 15;
             this.buttonN3.Text = "3";
             this.buttonN3.UseVisualStyleBackColor = false;
+            this.buttonN3.Click += new System.EventHandler(this.buttonN3_Click);
             // 
             // panel12
             // 
@@ -330,6 +322,7 @@
             this.buttonN2.TabIndex = 15;
             this.buttonN2.Text = "2";
             this.buttonN2.UseVisualStyleBackColor = false;
+            this.buttonN2.Click += new System.EventHandler(this.buttonN2_Click);
             // 
             // panel13
             // 
@@ -371,6 +364,7 @@
             this.buttonSuma.TabIndex = 20;
             this.buttonSuma.Text = "+";
             this.buttonSuma.UseVisualStyleBackColor = false;
+            this.buttonSuma.Click += new System.EventHandler(this.buttonSuma_Click);
             // 
             // panel15
             // 
@@ -391,6 +385,7 @@
             this.buttonMult.TabIndex = 18;
             this.buttonMult.Text = "*";
             this.buttonMult.UseVisualStyleBackColor = false;
+            this.buttonMult.Click += new System.EventHandler(this.buttonMult_Click);
             // 
             // buttonPorcentaje
             // 
@@ -403,6 +398,7 @@
             this.buttonPorcentaje.TabIndex = 21;
             this.buttonPorcentaje.Text = "%";
             this.buttonPorcentaje.UseVisualStyleBackColor = false;
+            this.buttonPorcentaje.Click += new System.EventHandler(this.buttonPorcentaje_Click);
             // 
             // buttonIgual
             // 
@@ -415,6 +411,7 @@
             this.buttonIgual.TabIndex = 22;
             this.buttonIgual.Text = "=";
             this.buttonIgual.UseVisualStyleBackColor = false;
+            this.buttonIgual.Click += new System.EventHandler(this.buttonIgual_Click);
             // 
             // buttonPunto
             // 
@@ -444,12 +441,63 @@
             this.labelSalir.Text = "X";
             this.labelSalir.Click += new System.EventHandler(this.labelSalir_Click);
             // 
+            // buttonCE
+            // 
+            this.buttonCE.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.buttonCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCE.Location = new System.Drawing.Point(12, 251);
+            this.buttonCE.Name = "buttonCE";
+            this.buttonCE.Size = new System.Drawing.Size(86, 40);
+            this.buttonCE.TabIndex = 16;
+            this.buttonCE.Text = "CE";
+            this.buttonCE.UseVisualStyleBackColor = false;
+            // 
+            // buttonC
+            // 
+            this.buttonC.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.buttonC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonC.Location = new System.Drawing.Point(104, 251);
+            this.buttonC.Name = "buttonC";
+            this.buttonC.Size = new System.Drawing.Size(40, 40);
+            this.buttonC.TabIndex = 24;
+            this.buttonC.Text = "C";
+            this.buttonC.UseVisualStyleBackColor = false;
+            this.buttonC.Click += new System.EventHandler(this.buttonC_Click);
+            // 
+            // buttonBorrar
+            // 
+            this.buttonBorrar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.buttonBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBorrar.Location = new System.Drawing.Point(257, 251);
+            this.buttonBorrar.Name = "buttonBorrar";
+            this.buttonBorrar.Size = new System.Drawing.Size(113, 40);
+            this.buttonBorrar.TabIndex = 25;
+            this.buttonBorrar.Text = "<---------";
+            this.buttonBorrar.UseVisualStyleBackColor = false;
+            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
+            // 
+            // textBoxResultados
+            // 
+            this.textBoxResultados.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxResultados.Location = new System.Drawing.Point(19, 37);
+            this.textBoxResultados.Multiline = true;
+            this.textBoxResultados.Name = "textBoxResultados";
+            this.textBoxResultados.Size = new System.Drawing.Size(365, 57);
+            this.textBoxResultados.TabIndex = 0;
+            // 
             // Calculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(395, 556);
+            this.ClientSize = new System.Drawing.Size(414, 556);
+            this.Controls.Add(this.textBoxResultados);
+            this.Controls.Add(this.buttonBorrar);
+            this.Controls.Add(this.buttonC);
+            this.Controls.Add(this.buttonCE);
             this.Controls.Add(this.labelSalir);
             this.Controls.Add(this.buttonPunto);
             this.Controls.Add(this.buttonIgual);
@@ -469,13 +517,11 @@
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.LabelTitle);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Calculadora";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Calculadora_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Calculadora_MouseMove);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -497,9 +543,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxResultados;
         private System.Windows.Forms.Label LabelTitle;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonN7;
@@ -534,6 +577,10 @@
         private System.Windows.Forms.Button buttonPunto;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label labelSalir;
+        private System.Windows.Forms.Button buttonBorrar;
+        private System.Windows.Forms.Button buttonC;
+        private System.Windows.Forms.Button buttonCE;
+        private System.Windows.Forms.TextBox textBoxResultados;
     }
 }
 

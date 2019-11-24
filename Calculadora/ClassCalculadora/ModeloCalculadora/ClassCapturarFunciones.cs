@@ -8,7 +8,7 @@ namespace ClassCalculadora.ModeloCalculadora
 {
     public class ClassCapturarFunciones
     {
-        public string CapturarFunciones(string funciones)
+        public string CapturarOperadores(string funciones)
         {
             if (funciones == "*")
             {
